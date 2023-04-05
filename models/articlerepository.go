@@ -1,6 +1,9 @@
 package models
 
-import "github.com/VBuligan/gin-gorm/storage"
+import (
+	"github.com/VBuligan/gin-gorm/storage"
+	_ "github.com/lib/pq"
+)
 
 func GetAllArticles(a *[]Article) error {
 	return storage.DB.Find(a).Error

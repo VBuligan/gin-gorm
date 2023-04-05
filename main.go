@@ -5,6 +5,7 @@ import (
 	"github.com/VBuligan/gin-gorm/routers"
 	"github.com/VBuligan/gin-gorm/storage"
 	"github.com/jinzhu/gorm"
+	_ "github.com/lib/pq"
 	"log"
 )
 
