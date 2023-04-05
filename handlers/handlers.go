@@ -47,7 +47,7 @@ func UpdateArticleById(c *gin.Context) {
 		return
 	}
 	c.BindJSON(&article)
-	err = models.UpdateArticle(&article)
+	err = models.UpdateArticleById(&article, id)
 	if err != nil {
 		helpers.ResponseJson(c, 404, article)
 		return

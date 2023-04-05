@@ -10,14 +10,14 @@ func AddNewArticle(a *Article) error {
 	return storage.DB.Create(a).Error
 }
 
-func AddNewArticle() {
-
+func GetArticleById(a *Article, id string) error {
+	return storage.DB.Where("id = ?", id).First(a).Error
 }
 
-func AddNewArticle() {
-
+func DeleteById(a *Article, id string) error {
+	return storage.DB.Where("id = ?", id).Delete(a).Error
 }
 
-func AddNewArticle() {
-
+func UpdateArticleById(a *Article, id string) error {
+	return storage.DB.Update(a).Error
 }
