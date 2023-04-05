@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/VBuligan/gin-gorm/models"
+	"github.com/VBuligan/gin-gorm/routers"
 	"github.com/VBuligan/gin-gorm/storage"
 	"github.com/jinzhu/gorm"
 	"log"
@@ -20,6 +21,6 @@ func main() {
 	storage.DB.AutoMigrate(&models.Article{})
 
 	// * r - gin маршрутизатор
-	r := routers.SetupRouters()
+	r := routers.SetupRouter()
 	r.Run()
 }
