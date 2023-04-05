@@ -7,10 +7,14 @@ import (
 )
 
 func main() {
-	storage.DB, err := gorm.Open("postgres", "")
+	var err error
+	storage.DB, err = gorm.Open("postgres", "host=... user=... password=... dbname=...")
 	if err != nil {
 		log.Println("Error db accessing", err)
 	}
 	// * Закрываем соединение
 	defer storage.DB.Close()
+
+	// * В этот момент орм сама сгенерит все запросы, миграции и применит их
+	storage.DB.AutoMigrate(&model.Article{})
 }
